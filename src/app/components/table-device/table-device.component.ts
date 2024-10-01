@@ -18,28 +18,17 @@ export class TableDeviceComponent {
   }
   addTable(): void {
     this.deviceService.add().subscribe(response => {
-    let tbody = document.getElementsByTagName("tbody")[0]
-    let row = tbody.insertRow()
-    let cellId = row.insertCell()
-    let cellName = row.insertCell()
-    let cellColor = row.insertCell()
-    let cellPrice = row.insertCell()
-    //let buttonView = row.insertCell()
-    //let buttonDelete = row.insertCell()
-
-    cellId.innerHTML = response.id
-    cellName.innerHTML = response.name
-    cellColor.innerHTML = response.data.color
-    cellPrice.innerHTML = response.data.price
-   
+    this.deviceList.push(response)
   })
   }
   upgrade(id: number): void{
     console.log("upgrade")
   }
-delete(id: number): void{
-  this.deviceService.delete(id).subscribe(response =>{
-    
+  deleteId(id: number): void{
+  this.deviceService.delete(id).subscribe(() =>{
+    console.log("no borra")
+    document.getElementById(`${id}`)?.remove()
+   // limpiar los inputs 
   })
 }
 }

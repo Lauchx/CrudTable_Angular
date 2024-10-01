@@ -38,7 +38,7 @@ export class DeviceApiService {
   // para hacer el patch poner un boton pq cada fila que tenga en el boton "view" y otro abajo del todo para hacer el put
   delete(id: number): Observable<any>{
     console.log("/${id}")
-    return this.http.delete(this.url + "/${id}")
+    return this.http.delete(this.url + "/" + id)
   }
 
 

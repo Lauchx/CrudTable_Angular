@@ -1,11 +1,16 @@
-table{
+table {
     border-collapse: collapse;
     overflow: hidden;
+    margin: auto;
+    
+
 }
-th{
+
+th {
     background: rgb(202, 202, 202);
     text-align: left;
 }
-tr:nth-child(even){
-    background:rgb(240, 240, 240);
+
+tr:nth-child(even) {
+    background: rgb(240, 240, 240);
 }

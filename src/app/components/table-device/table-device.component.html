@@ -11,7 +11,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let Device of deviceList">
+        <tr *ngFor="let Device of deviceList" id="{{Device.id}}">
             <td>
                 {{Device.id}}</td>
             <td>
@@ -21,17 +21,17 @@
             <td *ngIf="Device.data !== null &&  Device.data.hasOwnProperty('price'), else elsePrice">
                 {{Device.data.price}}</td>
             <td><Button (click)="Device.id ? upgrade(Device.id) : null">View</Button></td>
-            <td><button (click)="Device.id ? delete(Device.id) : null">Delete</button></td>
+            <td><button (click)="Device.id ? deleteId(Device.id) : null">Delete</button></td>
 
 
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <td><Button (click)="addTable()">Add</Button></td>
             <td><input id="name" placeholder="Name"></td>
             <td><input id="color" placeholder="Color"></td>
             <td><input id="price" placeholder="Price" type="number"></td>
+            <td><Button (click)="addTable()">Add</Button></td>
         </tr>
     </tfoot>
 </table>
