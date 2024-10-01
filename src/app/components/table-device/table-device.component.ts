@@ -26,7 +26,6 @@ export class TableDeviceComponent {
   }
   deleteId(id: number): void{
   this.deviceService.delete(id).subscribe(() =>{
-    console.log("no borra")
     document.getElementById(`${id}`)?.remove()
    // limpiar los inputs 
   })
