@@ -1,50 +1,20 @@
-table {
-    text-align: center;
-    border-collapse: collapse;
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-    margin-bottom: 50px;
-    border-radius: 20px 10px;
-    box-shadow: 0 0 1% rgba(100, 2, 2, 0.541);
-    width: 90%;
-    border: 0px;
+.modal-header {
     color: #f1f1f1;
+    background: #333;
 }
 
-th {
-    background: #283618;
-    color: #ffffff;
-    text-align: center;
-    padding: 0.5rem;
-    white-space: nowrap;
-    min-width: auto;
-    transition: all 0.9s ease;
+.modal-body {
+    color: #f1f1f1;
+    background: #333;
 }
 
-h1 {
-    margin: 50px;
+.modal-footer {
+    color: #f1f1f1;
+    background: #333;
 }
 
 button {
     border-radius: 10px 5px;
-}
-
-td {
-    padding: 10px;
-}
-
-tfoot tr {
-    background: #7c4f1c;
-}
-
-tr:nth-child(even) {
-    background: #93987c;
-}
-
-tr:nth-child(odd) {
-    background: #606c38;
 }
 
 input {
@@ -82,16 +52,19 @@ input {
 input::placeholder {
     color: #f1f1f1;
 }
-input:focus{
+
+input:focus {
     background: #333;
     border: 0px;
 
 }
-input:focus:valid{
+
+input:focus:valid {
     color: #f1f1f1;
     background: #333;
     border: 2px outset #45d428;
 }
-input:valid{
+
+input:valid {
     background: #606c38;
 }

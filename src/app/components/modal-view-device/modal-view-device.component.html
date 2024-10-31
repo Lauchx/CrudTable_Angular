@@ -1,0 +1,24 @@
+<span class="all">
+<div class="modal-header">
+	<h4 class="modal-title" id="modal-basic-title">Device</h4>
+	<button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+</div>
+<div class="modal-body">
+	<form>
+		<div class="mb-3">
+			<b><label>ID: {{device.id}}</label></b>
+			<div>
+				<label>Name</label>
+				<input #nameInput class="form-control" value="{{device.name}}">
+				<label>Color</label>
+				<input #colorInput class="form-control" value="{{device.data.color}}">
+				<label>Price</label>
+				<input #priceInput type="number" class="form-control" value="{{device.data.price}}">
+			</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn" (click)="upgrade(device)">Save</button>
+</div>
+</span>

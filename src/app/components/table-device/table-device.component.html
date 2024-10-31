@@ -1,3 +1,4 @@
+<h1>DEVICES</h1>
 <table>
     <thead>
         <tr>
@@ -5,9 +6,8 @@
             <th>Name</th>
             <th>Color</th>
             <th>Price</th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>Upgrade</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -20,20 +20,17 @@
                 {{Device.data.color}}</td>
             <td *ngIf="Device.data !== null &&  Device.data.hasOwnProperty('price'), else elseNull">
                 {{Device.data.price}}</td>
-            <td><Button (click)="Device.id ? upgrade(Device.id) : null">View</Button></td>
-            <td><button (click)="Device.id ? deleteId(Device.id) : null">Delete</button></td>
-
-
+            <td><button class="btn btn-view" (click)="Device.id ? upgrade(Device.id) : null">View</button></td>
+            <td><button class="btn btn-cancel" (click)="Device.id ? deleteId(Device.id) : null">Delete</button></td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <td><input id="name" placeholder="Name"></td>
-            <td><input id="color" placeholder="Color"></td>
-            <td><input id="price" placeholder="Price" type="number"></td>
-            <td><Button (click)="addTable()">Add</Button></td>
             <td></td>
-            <td></td>
+            <td><input id="name" class="form-control" placeholder="Name" required></td>
+            <td><input id="color" class="form-control" placeholder="Color" required></td>
+            <td><input id="price" class="form-control" placeholder="Price" type="number" required></td>
+            <td colspan="2"><button  class="btn btn-add" (click)="addTable()">Add</button></td>
         </tr>
     </tfoot>
 </table>
@@ -44,36 +41,25 @@
 </ng-template>
 
 
-<ng-template #content let-modal></ng-template>
-	<div class="modal-header">
-		<h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-	</div>
-	<div class="modal-body">
-		<form>
-			<div class="mb-3">
-				<label for="dateOfBirth">Device</label>
-				<div class="input-group">
-					<input
-						id="dateOfBirth"
-						class="form-control"
-						placeholder="yyyy-mm-dd"
-						name="dp"
-						ngbDatepicker
-						#dp="ngbDatepicker"
-					/>
-					<button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()" type="button"></button>
-				</div>
-			</div>
-		</form>
-	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')">Save</button>
-	</div>
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <label for="dateOfBirth">Device</label>
+                <div class="input-group">
+                    <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
+                        #dp="ngbDatepicker" />
+                    <button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()"
+                        type="button"></button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')">Save</button>
+    </div>
 </ng-template>
-
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
-
-<hr />
-
-<pre>{{ closeResult }}</pre>

@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(250deg,#352208 ,#a0520e, #bc6c25, #cd8742, #dda15e, #eece9f );
+    background-size: 400% 400%;
+}
