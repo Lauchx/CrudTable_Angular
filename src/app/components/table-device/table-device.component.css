@@ -37,16 +37,30 @@ td {
 
 tfoot tr {
     background: #7c4f1c;
+    transition: all 0.9s ease;
 }
 
-tr:nth-child(even) {
+tbody tr:nth-child(even) {
     background: #93987c;
+    transition: all 0.9 ease;
 }
 
-tr:nth-child(odd) {
+tbody tr:nth-child(odd) {
     background: #606c38;
+    transition: all 0.9s ease;
 }
-
+tbody tr:hover:nth-child(odd){
+    /* background: #9fb655; */
+    box-shadow: inset -1500px 0 0 0 #9fb655;
+}
+tbody tr:hover:nth-child(even){
+    /* background: #b0ba82; */
+    box-shadow: inset 1500px 0 0 0 #b0ba82;
+}
+tfoot tr:hover{
+    /* background: #b1742d; */
+    background: #b1742d;
+}
 input {
     align-items: center;
     margin: 10px;
@@ -95,3 +109,4 @@ input:focus:valid{
 input:valid{
     background: #606c38;
 }
+
